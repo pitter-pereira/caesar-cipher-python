@@ -1,22 +1,22 @@
-import string
 import cc_functions as cc
 
-action = input("Would you like to encrypt (1) or decrypt(2)?: ")
+message = input("Message: ").strip()
+shift = cc.get_shift()
+action = cc.get_action()
 
-message = input("\nEnter the message: ")
+match action:
+        # Encrypt
+        case "E":
+            message = cc.caesar_cipher(message, shift)
 
-if (action != "1" and action != "2"):
+        # Decrypt
+        case "D":
+            message = cc.caesar_cipher(message, -shift)
 
-    print("Action not supported")
+        # Qualquer outro valor
+        case _:
+            print("Action not supported")
+            message=None
 
-elif (action == "1"):
-
-    number =  input("You want to encrypt. Enter the number of jumps: ")
-
-    cc.encrypt(message, number)
-
-else:
-    
-    number =  input("You want to encrypt. Enter the number of jumps: ")
-
-    cc.decrypt(message, number)
+if message:
+    print("Message: " + message)
