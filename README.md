@@ -15,7 +15,7 @@ Uma implementação simples da **Cifra de César** em Python, que permite **crip
 1 - Clone este repositório:
 
 ```
-git clone https://github.com/seu-usuario/caesar-cipher-python.git
+git clone https://github.com/pitter-pereira/caesar-cipher-python.git
 
 cd caesar-cipher-python
 ```
